@@ -1,0 +1,14 @@
+@use './partials/util' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App {
+  @extend .container;
+}

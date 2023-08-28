@@ -1,0 +1,41 @@
+@use '../../partials/variables';
+@use '../../partials/util';
+
+.header {
+  &__nav {
+    display: flex;
+    @extend .container;
+  }
+  &__nav-link {
+    position: relative;
+    padding: 0.625rem;
+    text-decoration: none;
+    color: variables.$primary-color;
+    transition: 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 0.125rem;
+      background: variables.$primary-color;
+      transition: width 0.3s;
+    }
+    &:hover {
+      color: variables.$secondary-color;
+      &::after {
+        width: 100%;
+        background: variables.$secondary-color;
+      }
+    }
+    &--active {
+      color: variables.$secondary-color;
+      &::after {
+        width: 100%;
+        background: variables.$primary-color;
+      }
+    }
+  }
+}
